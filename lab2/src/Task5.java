@@ -69,6 +69,9 @@ public class Task5 {
             System.out.print("> Выберите пункт меню (1-4): ");
             if (scanner.hasNextInt()) {
                 choice = scanner.nextInt();
+                if (choice < 0) {
+                    System.out.println("— Число не может быть отрицательным!");
+                }
             } else {
                 System.out.println("— Некорректный ввод!");
                 scanner.next();
@@ -81,20 +84,25 @@ public class Task5 {
     private void evalExpression() {
         System.out.println("— Введите длину стороны a.");
         double a = getNumber();
+        if (a == 0) return;
 
         System.out.println("— Введите длину высоты h к a.");
         double h = getNumber();
+        if (h == 0) return;
 
         double s = eval(a, h);
         System.out.printf("— Площадь треугольника равна: %.2f\n", s);
     }
 
     private double getNumber() {
-        double number = 0;
-        while (number <= 0) {
-            System.out.print("> Введите положительное число: ");
+        double number = -1;
+        while (number < 0) {
+            System.out.print("> Введите положительное число или 0 для отмены: ");
             if (scanner.hasNextDouble()) {
                 number = scanner.nextDouble();
+                if (number < 0) {
+                    System.out.println("— Число не может быть отрицательным!");
+                }
             } else {
                 System.out.println("— Некорректный ввод!");
                 scanner.next();
