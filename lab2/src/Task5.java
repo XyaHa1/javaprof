@@ -12,22 +12,13 @@ public class Task5 {
     методы для отдельных частей.
      */
 
-    private final Scanner scanner;
-
-    Task5() {
-        this.scanner = new Scanner(System.in).useLocale(Locale.US);
-    }
+    private static final Scanner scanner = new Scanner(System.in).useLocale(Locale.US);
     
     public static void main(String[] args) {
-        Task5 task5 = new Task5();
-        task5.run();
-    }
-
-    public void run() {
         menu();
     }
 
-    private void menu() {
+    private static void menu() {
         while (true) {
             System.out.println(">>> Меню");
             System.out.println("1. Выполнить расчёт");
@@ -63,7 +54,7 @@ public class Task5 {
         }
     }
 
-    private int getOption() {
+    private static int getOption() {
         int choice = 0;
         while (choice < 1 || choice > 4) {
             System.out.print("> Выберите пункт меню (1-4): ");
@@ -81,7 +72,7 @@ public class Task5 {
         return choice;
     }
 
-    private void evalExpression() {
+    private static void evalExpression() {
         System.out.println("— Введите длину стороны a.");
         double a = getNumber();
         if (a == 0) return;
@@ -94,7 +85,7 @@ public class Task5 {
         System.out.printf("— Площадь треугольника равна: %.2f\n", s);
     }
 
-    private double getNumber() {
+    private static double getNumber() {
         double number = -1;
         while (number < 0) {
             System.out.print("> Введите положительное число или 0 для отмены: ");
@@ -111,7 +102,7 @@ public class Task5 {
         return number;
     }
 
-    private double eval(double a, double b) {
+    private static double eval(double a, double b) {
         return a * b / 2;
     }
 }
