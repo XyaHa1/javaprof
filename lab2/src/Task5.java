@@ -13,18 +13,25 @@ public class Task5 {
      */
 
     private static final Scanner scanner = new Scanner(System.in).useLocale(Locale.US);
-    
+
+    private static final byte MIN_OPTION = 1;
+    private static final byte MAX_OPTION = 4;
+
     public static void main(String[] args) {
         menu();
     }
 
     private static void menu() {
         while (true) {
-            System.out.println(">>> Меню");
-            System.out.println("1. Выполнить расчёт");
-            System.out.println("2. Информация о программе");
-            System.out.println("3. Информация о разработчике");
-            System.out.println("4. Выход");
+            System.out.println(
+                    """
+                    >>> Меню
+                    1. Выполнить расчёт
+                    2. Информация о программе
+                    3. Информация о разработчике
+                    4. Выход
+                    """
+            );
 
             int choice = getOption();
 
@@ -56,12 +63,16 @@ public class Task5 {
 
     private static int getOption() {
         int choice = 0;
-        while (choice < 1 || choice > 4) {
-            System.out.print("> Выберите пункт меню (1-4): ");
-            if (scanner.hasNextInt()) {
-                choice = scanner.nextInt();
-                if (choice < 0) {
-                    System.out.println("— Число не может быть отрицательным!");
+        while (choice < MIN_OPTION || choice > MAX_OPTION) {
+            System.out.print("> Выберите пункт меню (" + MIN_OPTION + "-" + MAX_OPTION + "): ");
+            if (scanner.hasNextLine()) {
+                try {
+                    choice = Byte.parseByte(scanner.nextLine());
+                    if (choice <= 0) {
+                        System.out.println("— Число не может быть отрицательным или нулем!");
+                    }
+                } catch (NumberFormatException e) {
+                    System.out.println("— Некорректный ввод! Введите только число.");
                 }
             } else {
                 System.out.println("— Некорректный ввод!");
@@ -89,10 +100,14 @@ public class Task5 {
         double number = -1;
         while (number < 0) {
             System.out.print("> Введите положительное число или 0 для отмены: ");
-            if (scanner.hasNextDouble()) {
-                number = scanner.nextDouble();
-                if (number < 0) {
-                    System.out.println("— Число не может быть отрицательным!");
+            if (scanner.hasNextLine()) {
+                try {
+                    number = Double.parseDouble(scanner.nextLine());
+                    if (number < 0) {
+                        System.out.println("— Число не может быть отрицательным!");
+                    }
+                } catch (NumberFormatException e) {
+                    System.out.println("— Некорректный ввод! Введите только число.");
                 }
             } else {
                 System.out.println("— Некорректный ввод!");
