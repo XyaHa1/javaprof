@@ -22,7 +22,7 @@ public class Task4 {
             return;
         }
 
-        double s = a * h / 2;
+        double s = a * h * 0.5;
         System.out.println("Площадь прямоугольного треугольника равна " + s);
 
 
