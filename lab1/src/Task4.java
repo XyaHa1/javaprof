@@ -9,7 +9,7 @@ public class Task4 {
         if (scanner.hasNextDouble()) {
             a = scanner.nextDouble();
         } else {
-            System.out.println("Вы ввели не число (pos=1).");
+            System.out.println("Вы ввели недопустимое значение (pos=1).");
             return;
         }
 
@@ -17,7 +17,7 @@ public class Task4 {
         if (scanner.hasNextDouble()) {
             h = scanner.nextDouble();
         } else {
-            System.out.println("Вы ввели не число (pos=2).");
+            System.out.println("Вы ввели недопустимое значение (pos=2).");
             return;
         }
 
