@@ -7,6 +7,9 @@ public class Task2 {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         double x = scanner.nextDouble();
+        if (x == 0) {
+            throw new IllegalArgumentException("x must not be equal to 0");
+        }
         double result = pow(cos(x), 3) - sin(2 * x) + (cos(x) / sin(x));
         System.out.println(result);
     }
