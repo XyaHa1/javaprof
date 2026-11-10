@@ -11,8 +11,8 @@ public class Task1 {
         String d = "Компьютер";
         double d1 = 4047.6937071833308311d;
         int num = 1571;
-        char value = 'I';
-        double num1 = 3492.9436366245830913d;
+        int value = 'I';
+        float num1 = 3492.943f;
         char ch1 = 'c';
         int num2 = 8956;
     }
