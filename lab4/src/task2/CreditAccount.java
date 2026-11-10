@@ -38,7 +38,7 @@ public class CreditAccount extends Account {
 
     @Override
     public String getDescription() {
-        return "Кредитный счёт (Лимит: " + creditLimit + "). " + super.getDescription();
+        return String.format("Кредитный счёт (Лимит: %s). %s", creditLimit, super.getDescription());
     }
 
     @Override
@@ -51,10 +51,8 @@ public class CreditAccount extends Account {
 
     @Override
     public String toString() {
-        return "CreditAccount{number=" + number +
-                ", owner=" + owner +
-                ", balance=" + balance +
-                ", creditLimit=" + creditLimit + "}";
+        return String.format("CreditAccount{number=%d, owner=%s, balance=%s, creditLimit=%s}",
+                number, owner, balance, creditLimit);
     }
 
     @Override

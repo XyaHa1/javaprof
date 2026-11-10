@@ -57,10 +57,8 @@ public class SavingsAccount extends Account {
 
     @Override
     public String toString() {
-        return "SavingsAccount{number=" + number +
-                ", owner=" + owner +
-                ", balance=" + balance +
-                ", interestRate=" + interestRate + "}";
+        return String.format("SavingsAccount{number=%d, owner=%s, balance=%s, interestRate=%s}",
+                number, owner, balance, interestRate);
     }
 
     @Override

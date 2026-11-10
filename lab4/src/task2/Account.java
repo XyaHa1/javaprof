@@ -19,7 +19,7 @@ abstract public class Account {
     }
 
     public String getDescription() {
-        return "Счёт №" + number + ", владелец: " + owner + ", баланс: " + balance;
+        return String.format("Счёт №%d, владелец: %s, баланс: %s", number, owner, balance);
     }
 
     public abstract void deposit(BigDecimal amount);
@@ -40,9 +40,7 @@ abstract public class Account {
 
     @Override
     public String toString() {
-        return "Account{number=" + number +
-                ", owner=" + owner +
-                ", balance=" + balance + "}";
+        return String.format("Account{number=%d, owner=%s, balance=%s}", number, owner, balance);
     }
 
     @Override

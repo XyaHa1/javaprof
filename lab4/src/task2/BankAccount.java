@@ -30,6 +30,12 @@ public class BankAccount extends Account {
 
     @Override
     public String getDescription() {
-        return "Банковский счет. " + super.getDescription();
+        return String.format("Банковский счет. %s", super.getDescription());
+    }
+
+    @Override
+    public String toString() {
+        return String.format("BankAccount{number=%d, owner='%s', balance=%s}",
+                number, owner, balance);
     }
 }
