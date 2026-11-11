@@ -3,6 +3,12 @@ import java.util.Scanner;
 
 public class Task1 {
     public static void main(String[] args) {
+        /*
+        Вывести сначала элементы с чётными номерами по возрастанию,
+        затем элементы с нечётными номерами по возрастанию.
+        Условный оператор не использовать.
+
+         */
         Scanner sc = new Scanner(System.in);
 
         String[] input = sc.nextLine().split(" ");

@@ -2,6 +2,9 @@ import java.util.Arrays;
 import java.util.Scanner;
 
 public class Task3 {
+    /*
+    Сформировать B, где Bk = Ak + Ak+1 + … + AN. Реализовать отдельным статическим методом.
+     */
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 

@@ -2,6 +2,12 @@ import java.util.Arrays;
 import java.util.Scanner;
 
 public class Task4 {
+    /*
+    Даны M, N, D и M чисел.
+    Сформировать матрицу M×N: первый столбец равен исходному набору,
+    каждый следующий столбец получается прибавлением D к предыдущему.
+
+     */
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
